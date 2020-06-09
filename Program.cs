@@ -18,9 +18,8 @@ namespace ProjetoUber
 
             if(usuario.TokenLogin != "" && usuario.TokenLogin != null){
 
-                Console.WriteLine("Acesso liberado!");
-                Console.WriteLine("Seu token de login é este: "+usuario.TokenLogin);
-
+                Console.WriteLine("Acesso liberado!\nO seu token é este: "+usuario.TokenLogin);
+            
                 Console.WriteLine ();
 
                 Console.WriteLine("O que deseja fazer? ");
@@ -45,9 +44,29 @@ namespace ProjetoUber
                 System.Console.WriteLine("Digite o local de chegada: ");
                 string localChegada = Console.ReadLine();
 
+                Console.WriteLine ();
+
                 if(localInicio != "" && localChegada != ""){
-                    Console.WriteLine ("Qual o status da corrida? ");
+                    Console.WriteLine ("Qual o status da corrida? Digite i para ínicio, a para em andamento e c para concluída.\n ps: você só pode efetuar um pagamente após uma corrida ser concluida.");
                     string statusCorrida = Console.ReadLine();
+                    
+                    switch (statusCorrida){
+                        case "i": 
+                        Console.WriteLine("Você não pode efetuar o pagamento.");
+                        break;
+                        
+                        case "a":
+                        Console.WriteLine("Você ainda não pode efetuar o pagamento, deve esperar a corrida ser finalizada.");
+                        break;
+
+                        case "c":
+                        Console.WriteLine("Você já pode efetuar o pagamento!");
+                        break;
+
+                        default:
+                        Console.WriteLine ("O valor inserido é inválido.");
+                        break;
+                    }
 
                 }else{
                     System.Console.WriteLine(corrida.Cancelar());
