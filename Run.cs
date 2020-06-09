@@ -1,6 +1,6 @@
 namespace ProjetoUber
 {
-    public class Corrida
+    public class Run
     {
         public string localInicio { get; set; }
         public string localChegada { get; set; }
@@ -9,7 +9,7 @@ namespace ProjetoUber
         public string passageiro { get; set; }
 
         public string Cancelar(){
-            return "Corrida cancelada.";
+            return "A corrida foi cancelada pois os atributos que deviam ser preenchidos não foram completados corretamente.";
         }
     }
 }
